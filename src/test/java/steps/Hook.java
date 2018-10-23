@@ -32,7 +32,7 @@ public class Hook extends BaseUtil{
 
         //Chrome driver
         //System.setProperty("webdriver.chrome.driver", "D:\\Libs\\chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", "\tools\chromedrive\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\tools\chromedrive\chromedriver.exe");
         base.Driver = new ChromeDriver();
          
         //WebDriver driver = new RemoteWebDriver(new URL("http://dbg-trp-jenkins.swg-devops.com:4444/wd/hub"), capability);
