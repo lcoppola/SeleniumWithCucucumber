@@ -6,7 +6,8 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+//import org.openqa.selenium.remote.RemoteWebDriver;
 //import org.openqa.selenium.*;
 
 /**
@@ -34,22 +35,8 @@ public class Hook extends BaseUtil{
         //System.setProperty("webdriver.chrome.driver", "D:\\Libs\\chromedriver.exe");
         //System.setProperty("webdriver.chrome.driver", "C:\tools\chromedrive\chromedriver.exe");
         //Chrome driver 	/var/jenkins_home
-        //System.setProperty("webdriver.chrome.driver", "/var/jenkins_home/tools/chromedriver/chromedriver.ext");
-        //base.Driver = new ChromeDriver();
-        
-           ChromeDriverService service = new ChromeDriverService.Builder()
-                    .usingDriverExecutable(new File("/var/jenkins_home/tools/chromedriver/chromedriver"))
-                    .usingAnyFreePort()
-                    .build();
-            service.start();
-            try {
-                service.start();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            base.Driver = new RemoteWebDriver(service.getUrl(),DesiredCapabilities.chrome());
-         
-       
+        System.setProperty("webdriver.chrome.driver", "/var/jenkins_home/tools/chromedriver/chromedriver.ext");
+        base.Driver = new ChromeDriver();
      
          
         //WebDriver driver = new RemoteWebDriver(new URL("http://dbg-trp-jenkins.swg-devops.com:4444/wd/hub"), capability);
